@@ -1,0 +1,251 @@
+/** Base */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  @extend %scrollbar;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: $font-family;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight;
+  background: $color-2;
+  color: $color-1;
+}
+
+img {
+  max-width: 100%;
+}
+
+p,
+li,
+b,
+i,
+strong,
+a,
+mark {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  font-feature-settings: normal;
+}
+
+p,
+li,
+mark,
+a,
+blockquote {
+  font-weight: $fontWeight * 1.33;
+}
+
+b,
+strong {
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+code {
+  font-size: $fontSize * 1.1;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  font-weight: $fontWeight * 1.33;
+}
+
+mark {
+  background: $color-1;
+  padding: 0.05vw 0.4vw;
+  border-radius: 2px;
+  color: $color-2;
+  font-size: $fontSize * 1.1;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  font-weight: $fontWeight * 1.33;
+  word-break: break-word;
+}
+
+.task {
+  list-style: none;
+}
+
+blockquote {
+  background-color: $color-1;
+  font-size: $fontSize * 1.1;
+  letter-spacing: $letterSpacing;
+  border-left: 4px solid $color-1;
+  border-radius: 2px;
+  padding: 2.5vw;
+  margin: 2%;
+  font-style: italic;
+  color: $color-2;
+  p {
+    margin: 0;
+  }
+  cite {
+    display: block;
+    margin: 0 0 -1.2em 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    line-height: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+a {
+  color: $color-1;
+  text-decoration-skip-ink: none;
+  &:focus {
+    outline: 1px dashed $color-1;
+  }
+
+  &:hover {
+    color: darken($color-1, 5%);
+  }
+}
+
+/** Pre */
+pre {
+  @extend %scrollbar;
+  display: block;
+  border-radius: 4px;
+  overflow: auto;
+  tab-size: 4;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: $fontSize - 5px;
+  letter-spacing: $letterSpacing;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-bottom: 3rem !important;
+  width: calc(100% - 1rem);
+  max-height: 20rem;
+  font-family: monospace;
+  background-color: $color-1;
+  color: $color-2;
+}
+
+/** forms */
+button {
+  line-height: 1.5rem;
+  margin: 0 3px;
+  padding: 0.2rem 0.8rem;
+  cursor: pointer;
+  background: $color-1;
+  border: 1px solid darken($color-2, 80%);
+  color: $color-2;
+  span:last-child {
+    color: darken($color-2, 25%);
+    transition: all 500ms ease;
+  }
+  &:hover {
+    background: $color-2;
+    border: 1px solid $color-1;
+    color: $color-1;
+    span:last-child {
+      color: $color-1;
+      transition: all 500ms ease;
+    }
+  }
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 20px;
+  margin: 0px;
+  margin-right: 5px;
+  max-width: 100%;
+  outline: none;
+  overflow: visible;
+  padding: 2px 5px;
+  word-wrap: break-word;
+  border: 1px solid $color-1;
+  background: $color-2;
+  color: $color-1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $lineHeight * 1.5;
+  text-transform: uppercase;
+}
+
+hr {
+  border-width: 0;
+  height: 1px;
+  background: $color-1;
+  margin: 1rem auto;
+  width: calc(100% - 10rem);
+}
+
+table {
+  width: 100%;
+  margin: 2em auto;
+  th {
+    padding: 0.5rem;
+    background: $color-1;
+    border: 1px solid $color-1;
+    border-bottom: 2px solid $color-1;
+    color: $color-2;
+  }
+  td {
+    padding: 1em;
+    background: $color-2;
+    border: 1px solid $color-1;
+  }
+}
+
+/* Iframe responsive
+-------------------*/
+.iframe,
+table {
+  width: 100%;
+  margin: 0;
+  .video {
+    position: relative;
+    display: block;
+    padding: 0;
+    padding-top: 56.25%;
+    &:before {
+      display: block;
+      padding-bottom: 80%;
+    }
+  }
+  embed,
+  iframe,
+  object,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  video {
+    width: 100%;
+    height: auto;
+  }
+  &:before {
+    display: block;
+    padding-bottom: 80%;
+  }
+}

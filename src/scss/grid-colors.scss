@@ -1,0 +1,30 @@
+/** grid colors */
+.dnd-container,
+.dnd-grid,
+.dnd-box {
+  border: 2px solid rgba($color-1, 0.02);
+  background: $color-2;
+  position: relative;
+  &:hover {
+    border: 2px solid $color-1;
+    transition: all 500ms ease;
+    > .dnd-opts {
+      display: block;
+      opacity: 1;
+      background: $color-1;
+      transition: all 500ms ease;
+    }
+  }
+  > .dnd-opts {
+    opacity: 0.02;
+  }
+  > .dnd-opts button {
+    background: lighten($color-1, 5%);
+    color: $color-2;
+    border: 1px solid $color-1;
+  }
+  textarea {
+    background: $color-1;
+    color: $color-2;
+  }
+}

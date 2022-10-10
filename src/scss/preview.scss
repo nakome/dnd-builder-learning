@@ -1,0 +1,30 @@
+/** preview */
+.dnd-preview {
+  .dnd-container {
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+  .empty-content {
+    display: none;
+  }
+  .dnd-container,
+  .dnd-grid,
+  .dnd-box {
+    position: relative;
+    border: none;
+    margin: 0 0.2rem;
+    padding: 1px;
+    .dnd-opts {
+      display: none;
+    }
+    &:hover {
+      &:before {
+        content: '';
+      }
+      .dnd-opts {
+        display: none;
+      }
+    }
+  }
+}
