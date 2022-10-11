@@ -20,8 +20,10 @@ export default function Grid({ block, blockIndex }) {
 
   // --- Create grid
   const handleCreate = () => {
+    
     let newList = [...blocks];
     let grid = newList[containerId].children[gridId];
+
     // ---- push demo content
     grid.children.push({
       id: Uid(6),

@@ -25,18 +25,19 @@ export default function Box({ block, blockIndex }) {
 
   // --- Remove Grid
   const handleRemove = id => {
-    let newList = [...blocks],
-      child = newList[containerId].children[gridId],
-      removeElement = child.children.filter(item => item.id !== id);
+    let newList = [...blocks];
+    let child = newList[containerId].children[gridId];
+    let removeElement = child.children.filter(item => item.id !== id);
     // copy
     child.children = [...removeElement];
     setBlocks(newList);
   };
+
   // --- Update content
   const handleUpdate = e => {
-    let newList = [...blocks],
-      grid = newList[containerId].children[gridId],
-      box = grid.children[boxId];
+    let newList = [...blocks];
+    let grid = newList[containerId].children[gridId];
+    let box = grid.children[boxId];
     box.content = e.target.value;
     setBlocks(newList);
   };

@@ -38,10 +38,12 @@ export default function Container({ block, blockIndex }) {
         <button className="drag">
           <IconDragHorinzontal />
         </button>
-        <button onClick={handleCreate}>
+        <button 
+          onClick={handleCreate}>
           <IconPlus />
         </button>
-        <button onClick={() => handleRemove(block.id)}>
+        <button 
+          onClick={() => handleRemove(block.id)}>
           <IconClose />
         </button>
       </div>

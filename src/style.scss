@@ -5,6 +5,11 @@
 @import './scss/preview.scss';
 @import './scss/shortcodes.scss';
 
+
+img[src$='#img-responsive'] {
+  width: 100%;
+}
+
 /** on drag */
 .ghost {
   background: $color-1;
